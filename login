@@ -86,17 +86,14 @@ button:hover {
     </div>
     <script>
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
+    event.preventDefault();
     
-    // Obtém os valores dos campos
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Simula a autenticação (exemplo básico)
     if (username === 'admin' && password === 'password') {
         document.getElementById('message').textContent = 'Login bem-sucedido!';
         document.getElementById('message').style.color = 'green';
-        // Aqui você pode redirecionar ou fazer outras ações após o login
     } else {
         document.getElementById('message').textContent = 'Usuário ou senha incorretos!';
         document.getElementById('message').style.color = 'red';
