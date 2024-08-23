@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3874ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.reset-password-container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 15px;
+    color: red;
+}
+
+    </style>
+</head>
+<body>
+    <div class="reset-password-container">
+        <h1>Redefinir Senha</h1>
+        <form id="resetPasswordForm">
+            <div class="input-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Enviar E-mail de Redefinição</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    
+    if (email.includes('@') && email.includes('.')) {
+
+        document.getElementById('message').textContent = 'E-mail de redefinição enviado com sucesso!';
+        document.getElementById('message').style.color = 'green';
+
+    } else {
+        document.getElementById('message').textContent = 'Por favor, insira um e-mail válido.';
+        document.getElementById('message').style.color = 'red';
+    }
+});
+
+    </script>
+</body>
+</html>
